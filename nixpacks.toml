@@ -1,2 +1,5 @@
 [phases.setup]
 nixPkgs = ['...', 'protobuf', 'tree']
+
+[start]
+cmd = "pwd && tree -L 3 && ./target/release/chatroom-server"
