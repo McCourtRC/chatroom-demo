@@ -75,7 +75,9 @@ impl ChatRoom for ChatRoomService {
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let port = std::env::var("PORT").expect("missing PORT env var");
     let addr = format!("0.0.0.0:{}", port).parse()?;
-    // let addr = "[::1]:50051".parse()?;
+
+    println!("connected to PORT {}", port);
+
     let greeter = GreeterService::default();
     let chatroom = ChatRoomService::default();
 
