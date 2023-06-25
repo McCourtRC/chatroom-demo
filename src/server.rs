@@ -74,6 +74,7 @@ impl ChatRoom for ChatRoomService {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let port = std::env::var("PORT").expect("missing PORT env var");
+    println!("PORT: {}", port);
     let addr = format!("{}:50051", port).parse()?;
     // let addr = "[::1]:50051".parse()?;
     let greeter = GreeterService::default();
