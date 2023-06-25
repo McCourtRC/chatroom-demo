@@ -1,8 +1,11 @@
-[phases.setup]
-nixPkgs = ['...', 'protobuf']
-
 [variables]
 PORT = '50051'
 
+[phases.setup]
+nixPkgs = ['...', 'protobuf']
+
+[phases.build]
+cmds = ['cargo build --release', 'cp ./target/release/chatroom-server $out/chatroom-server']
+
 [start]
-cmd = 'cargo run --release --bin chatroom-server'
+cmd = '$out/chatroom-server'
