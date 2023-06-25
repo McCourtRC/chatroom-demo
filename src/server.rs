@@ -25,6 +25,7 @@ impl Greeter for GreeterService {
         &self,
         request: Request<HelloRequest>, // Accept request of type HelloRequest
     ) -> Result<Response<HelloResponse>, Status> {
+        println!("RECEIEVED REQ");
         let reply = hello_world::HelloResponse {
             message: format!("Hello {}!", request.into_inner().name).into(), // We must use .into_inner() as the fields of gRPC requests and responses are private
         };
