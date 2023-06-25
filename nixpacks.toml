@@ -3,6 +3,3 @@ nixPkgs = ['...', 'protobuf', 'tree']
 
 [phases.build]
 cmds = ["cargo build --release --target x86_64-unknown-linux-musl --bin chatroom-server"]
-
-[start]
-cmd = "pwd && tree -L 3 && /chatroom-server"
