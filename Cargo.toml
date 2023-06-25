@@ -5,11 +5,11 @@ edition = "2021"
 
 [[bin]] # Bin to run the HelloWorld gRPC server
 name = "chatroom-server"
-path = "src/server.rs"
+path = "src/main.rs"
 
-[[bin]] # Bin to run the HelloWorld gRPC client
-name = "chatroom-client"
-path = "src/client.rs"
+# [[bin]] # Bin to run the HelloWorld gRPC client
+# name = "chatroom-client"
+# path = "src/client.rs"
 
 [dependencies]
 tonic = "0.9"
