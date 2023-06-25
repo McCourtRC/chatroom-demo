@@ -2,7 +2,7 @@
 nixPkgs = ['...', 'protobuf', 'tree']
 
 [phases.build]
-cmds = ["cat Dockerfile", "cargo build --release --bin chatroom-server"]
+cmds = ["cargo build --release --bin chatroom-server"]
 
 [start]
 cmd = "pwd && tree -L 3 && /chatroom-server"
