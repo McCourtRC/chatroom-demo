@@ -2,7 +2,7 @@
 nixPkgs = ['...', 'protobuf', 'tree']
 
 [phases.build]
-cmds = ["cargo build --release --bin chatroom-server", "pwd", "cp ./target/release/chatroom-server ./app/target/release", "pwd"]
+cmds = ["cargo build --release --bin chatroom-server", "tree -L 3", "cp ./target/release/chatroom-server ./app/target/release", "tree -L 3"]
 
 [start]
 cmd = "./target/release/chatroom-server"
