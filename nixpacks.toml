@@ -1,5 +1,5 @@
 [phases.setup]
 nixPkgs = ['...', 'protobuf', 'tree']
 
-[phases.build]
-cmds = ["cargo build --release --target x86_64-unknown-linux-musl --bin chatroom-server"]
+[start]
+cmd = "cargo run --release --bin chatroom-server"
