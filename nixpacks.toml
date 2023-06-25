@@ -1,8 +1,14 @@
 [phases.setup]
-nixPkgs = ['rustup', 'protobuf', 'tree']
+nixPkgs = ['...', 'protobuf', 'tree']
+
+[phase.debug]
+cmds = ["pwd", "tree -L 3"]
 
 [phases.build]
-cmds = ["rustup default stable", "cargo build --release --bin chatroom-server", "pwd", "tree -L 3"]
+cmds = ["cargo build --release --bin chatroom-server"]
+
+[phase.debug]
+cmds = ["pwd", "tree -L 3"]
 
 [start]
 cmd = "pwd && tree -L 3 && ./target/release/chatroom-server"
