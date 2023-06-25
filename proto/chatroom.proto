@@ -1,0 +1,42 @@
+syntax = "proto3";
+package chatroom;
+
+service ChatRoom {
+    rpc Join (JoinRequest) returns (JoinResponse);
+    rpc Leave (LeaveRequest) returns (LeaveResponse);
+    rpc SendMessage (SendMessageRequest) returns (SendMessageResponse);
+}
+
+message JoinRequest {
+    string username = 1;
+}
+
+message JoinResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message LeaveRequest {
+    string username = 1;
+}
+
+message LeaveResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message SendMessageRequest {
+    string message = 1;
+}
+
+message SendMessageResponse {
+    string message = 1;
+}
+
+
+message ChatMessage {
+    string sender = 1;
+    string message = 2;
+    uint64 timestamp = 3;
+}
+
